@@ -1,0 +1,6 @@
+vel_2m2r1545321.pcd
+vel=Velodyne HDL32
+2m = 2 metres front distance
+2l/r = 2 metres left or right
+12033465=ROS Time (can be ignored
+.pcd = point cloud data format
