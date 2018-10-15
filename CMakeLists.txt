@@ -1,8 +1,14 @@
 cmake_minimum_required(VERSION 3.2.1)
-project (scratch)
+project (HDM)
 
 # Add project cmake modules to path.
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR}/cmake)
+
+find_package(PCL 1.2 REQUIRED)
+
+add_subdirectory(app)
+add_subdirectory(test)
+add_subdirectory(vendor/googletest/googletest)
 
 # We probably don't want this to run on every build.
 option(COVERAGE "Generate Coverage Data" OFF)
@@ -24,6 +30,6 @@ include(CMakeToolsHelpers OPTIONAL)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_CXX_STANDARD 14)
 
-add_subdirectory(app)
-add_subdirectory(test)
-add_subdirectory(vendor/googletest/googletest)
+
+
+

@@ -17,6 +17,14 @@
 
 int main()
 {
-    dummy();
-    return 0;
+  pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
+
+  std::string filename = "/home/vendetta/Documents/3dLidar_TestData/vel_2m2l1230400000.pcd";
+
+  load_pcd(filename, cloud);
+  
+  visualize(cloud);
+
+  return(0);
+
 }
