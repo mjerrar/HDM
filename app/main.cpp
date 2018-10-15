@@ -13,7 +13,8 @@
 //limitations under the License.
 
 #include <iostream>
-#include <lib.hpp>
+
+#include <lib.h>
 
 int main()
 {
@@ -22,6 +23,9 @@ int main()
   std::string filename = "/home/vendetta/Documents/3dLidar_TestData/vel_2m2l1230400000.pcd";
 
   load_pcd(filename, cloud);
+  
+  VoxelGridFilter voxfilter(0.1,0.1,0.1);
+  voxfilter.filter(cloud);
   
   visualize(cloud);
 
