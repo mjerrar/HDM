@@ -36,7 +36,7 @@ void PlaneExtraction::extractGroundPlane(
   pcl::ModelCoefficients::Ptr coefficients(new pcl::ModelCoefficients);
   pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_plane(
       new pcl::PointCloud<pcl::PointXYZ>());
-  int i = 0, nr_points = <int>(cloud->points.size());
+  int i = 0, nr_points = int(cloud->points.size());
   while (cloud->points.size() > 0.3 * nr_points) {
     ///< Segment the largest planar component from the remaining cloud>
     this->seg.setInputCloud(cloud);

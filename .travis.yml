@@ -5,6 +5,8 @@ dist: trusty
 # Modern cpp settings from
 #  http://genbattle.bitbucket.org/blog/2016/01/17/c++-travis-ci/
 language: cpp
+cache:
+  ccache: false
 matrix:
   include:
     - os: linux
@@ -12,28 +14,30 @@ matrix:
       addons:
         apt:
           sources:
+            - kalakris-cmake
+            - boost-latest
+            - kubuntu-backports
             - ubuntu-toolchain-r-test
             - george-edison55-precise-backports
+            - sourceline: 'ppa:v-launchpad-jochen-sprickerhof-de/pcl'
           packages:
             - g++-5
             - cmake
             - cmake-data
+            - libpcl-1.7-all-dev
+            - libgtest-dev
+
       env: COMPILER=g++-5
 
 before_install:
   - pip install --user cpp-coveralls
 install:
   - sudo apt-get install -y -qq lcov
-  - sudo apt-get install -y -qq lcov
-  - sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key 19274DEF
-  - sudo echo "deb http://ppa.launchpad.net/v-launchpad-jochen-sprickerhof-de/pcl/ubuntu maverick main" >> /etc/apt/sources.list
-  - sudo apt-get update
-  - sudo apt-get install libpcl-allsudo apt-get install g++ 
 script:
   - export CXX=$COMPILER;
   - mkdir build
   - cd build
-  - cmake -DCOVERAGE=ON -DCMAKE_BUILD_TYPE=Debug ../
+  - cmake -DCOVERAGE=ON -DCMAKE_BUILD_TYPE=Release ../
   - make
   - make code_coverage
   - test/cpp-test
@@ -42,4 +46,4 @@ after_success:
   - coveralls --root .. -E ".*external.*" -E ".*CMakeFiles.*" -E ".*test/.*.cpp.*"
 
 notifications:
-  email: false
+email: false

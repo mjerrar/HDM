@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include <lib.h>
+#include <main.h>
 #include <voxel.h>
 #include <voxel.cpp>
 
