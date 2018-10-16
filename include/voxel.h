@@ -1,3 +1,11 @@
+/**
+* @file voxel.h
+* @author Jerrar Bukhari
+* @date 16 Oct 2018
+* @copyright 2018 Jerrar Bukhari
+* @brief <Header file for voxel grid filter based on PCL>
+*/
+
 #ifndef VOXEL_
 #define VOXEL_
 
