@@ -12,15 +12,27 @@
 //See the License for the specific language governing permissions and
 //limitations under the License.
 
+/**
+* @file main.cpp
+* @author Jerrar Bukhari
+* @date 16 Oct 2018
+* @brief <3D LIdar Based Human Detection and localization module>
+*/
+
+
 #include <iostream>
+#include <vector>
+
+#include <pcl/common/centroid.h>
 
 #include <lib.h>
 
-int main()
+int main(int argc, char** argv)
 {
+
   pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
 
-  std::string filename = "/home/vendetta/Documents/3dLidar_TestData/vel_2m2l1230400000.pcd";
+  std::string filename = "/home/vendetta/Documents/3dLidar_TestData/vel_3m970398000.pcd";
 
   load_pcd(filename, cloud);
 
@@ -36,8 +48,60 @@ int main()
   ClusterExtractor clusteror(0.1,10,25000);
   clusteror.extract(cloud);
 
+  Eigen::Vector4f human_pos;
+  pcl::compute3DCentroid(*cloud, human_pos);
+
+  std::cout<<"Coordinates of Human are"<<std::endl;
+  std::cout<<"x : "<<human_pos[0]<<std::endl;
+  std::cout<<"y : "<<human_pos[1]<<std::endl;
+  std::cout<<"z : "<<human_pos[2]<<std::endl;
+
   visualize(cloud);
 
   return(0);
 
 }
+
+/**
+* @brief <visualize point cloud data>
+* @param [in] <cloud> <point cloud data>
+*/
+void visualize(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud)
+ {
+   pcl::visualization::CloudViewer viewer ("Simple Cloud Viewer");
+   viewer.showCloud (cloud);
+   while (!viewer.wasStopped ())
+   {
+   }
+ }
+
+ /**
+ * @brief <visualize point cloud data>
+ * @param [in] <cloud> <point cloud data>
+ */
+void visualize(pcl::PointCloud<pcl::PointXYZI>::Ptr cloud)
+ {
+   pcl::visualization::CloudViewer viewer ("Simple Cloud Viewer");
+   viewer.showCloud (cloud);
+   while (!viewer.wasStopped ())
+   {
+   }
+ }
+
+ /**
+ * @brief <load point cloud data>
+ * @param [in] <cloud> <point cloud data holder>
+ * @param [in] <filename> <path to cloud data>
+ */
+int load_pcd(std::string filename, pcl::PointCloud<pcl::PointXYZ>::Ptr cloud)
+ {
+  if (pcl::io::loadPCDFile<pcl::PointXYZ> (filename, *cloud) == -1) //* load the file
+    {
+      PCL_ERROR ("Couldn't read file test_pcd.pcd \n");
+      return (-1);
+    }
+    std::cout << "Loaded " << std::endl
+              << cloud->width << std::endl
+              << cloud->height << std::endl;
+  return (1);
+ }
