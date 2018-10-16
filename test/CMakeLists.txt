@@ -9,5 +9,5 @@ add_executable(
 )
 
 target_include_directories(cpp-test PUBLIC ../vendor/googletest/googletest/include 
-                                           ${CMAKE_SOURCE_DIR}/include ${PCL_INCLUDE_DIRS} ../app)
+                                           ${CMAKE_SOURCE_DIR}/include ${PCL_INCLUDE_DIRS} ../app/)
 target_link_libraries(cpp-test PUBLIC gtest ${PCL_LIBRARIES})

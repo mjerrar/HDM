@@ -12,8 +12,87 @@ https://docs.google.com/spreadsheets/d/1--ecBQO27Q_yDZIuTU98IUCulypahKdAMgMWPD-0
 
 This project demonstrates the ability to detect and localize Human obstacles in 3 dimensional space utilizing a head mounted 3d Lidar.
 It takes in a Point Cloud data and outputs the X, Y and Z coordinate of the detected Human in the field. 
+
 The primary workflow consists of parsing a .PCD file and converting it into a pcl::PointXYZ format.
-A Voxel Grid Filter is then applied to downsample the high-res data 
+A Voxel Grid Filter is then applied to downsample the high-res data into uniformly spaced points.
+A passthrough filter ensures that a reasonbable range of datapoints is selected. (x:-5:5, y:-5:5, z:-2:0.5)
+
+Using SACSegmentation we deduce the ground plane by randomly trying to fit points on the plane, we find the ground plane when considerable points satisfy the equation of a plane. These points are then subtracted from the original point cloud which leaves us with the point clouds of the objects around the Lidar.
+A built in Euclidean clustering algorithm is employed to give the most dominant cluster in terms of number of points whose centroid quite closely approximates the relative coordinates of the detected human.
+
+The core library used in completeing this project is the Point Cloud Library. 
+The filtering, segmentation, visualization and data manupilation modules provided have greatly increased work efficiency throughout the project.
+
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+Either you can install the prebuilt PCL library for Linux using the following command
+
+```
+sudo add-apt-repository ppa:v-launchpad-jochen-sprickerhof-de/pcl
+sudo apt-get update
+sudo apt-get install libpcl-all
+```
+[PointCloud](http://www.pointclouds.org/downloads/linux.html) - Prebuilt binaries for Linux
+
+OR
+
+You can install from source following the instructions belo:
+
+Install oracle-java8-jdk:
+```
+sudo add-apt-repository -y ppa:webupd8team/java && sudo apt update && sudo apt -y install oracle-java8-installer
+```
+
+Install universal pre-requisites:
+```
+sudo apt -y install g++ cmake cmake-gui doxygen mpi-default-dev openmpi-bin openmpi-common libusb-1.0-0-dev libqhull* libusb-dev libgtest-dev
+sudo apt -y install git-core freeglut3-dev pkg-config build-essential libxmu-dev libxi-dev libphonon-dev libphonon-dev phonon-backend-gstreamer
+sudo apt -y install phonon-backend-vlc graphviz mono-complete qt-sdk libflann-dev
+```
+
+For PCL v1.8, Ubuntu 16.04.2 input the following:
+
+Dependencies:
+```
+sudo apt -y install libflann1.8 libboost1.58-all-dev
+
+cd ~/Downloads
+wget http://launchpadlibrarian.net/209530212/libeigen3-dev_3.2.5-4_all.deb
+sudo dpkg -i libeigen3-dev_3.2.5-4_all.deb
+sudo apt-mark hold libeigen3-dev
+
+wget http://www.vtk.org/files/release/7.1/VTK-7.1.0.tar.gz
+tar -xf VTK-7.1.0.tar.gz
+cd VTK-7.1.0 && mkdir build && cd build
+cmake ..
+make
+sudo make install
+```
+
+cd ~/Downloads
+wget https://github.com/PointCloudLibrary/pcl/archive/pcl-1.8.0.tar.gz
+tar -xf pcl-1.8.0.tar.gz
+cd pcl-pcl-1.8.0 && mkdir build && cd build
+cmake ..
+make
+sudo make install
+
+cd ~/Downloads
+rm libeigen3-dev_3.2.5-4_all.deb VTK-7.1.0.tar.gz pcl-1.8.0.tar.gz
+sudo rm -r VTK-7.1.0 pcl-pcl-1.8.0
+
+
+
+### Installing
+
+A step by step series of examples that tell you how to get a development env running
+
+Say what the step will be
+
 
 ## Standard install via command-line
 ```
