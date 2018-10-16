@@ -33,27 +33,25 @@ int main(int argc, char** argv) {
 
   load_pcd(filename, cloud);
 
-visualize(cloud);
+  visualize(cloud);
 
   VoxelGridFilter voxfilter(0.1, 0.1, 0.1);
   voxfilter.filter(cloud);
 
-visualize(cloud);
+  visualize(cloud);
 
   PassThroughFilter passfilter(-5.0, 5.0, -5.0, 5.0, -2.0, 1.0);
   passfilter.filter(cloud);
 
-visualize(cloud);
+  visualize(cloud);
 
   PlaneExtraction planeExtractor(100, 0.02);
   planeExtractor.extractGroundPlane(cloud);
 
-visualize(cloud);
-
   ClusterExtractor clusteror(0.1, 10, 25000);
   clusteror.extract(cloud);
 
-visualize(cloud);
+  visualize(cloud);
 
   Eigen::Vector4f human_pos;
   pcl::compute3DCentroid(*cloud, human_pos);
@@ -62,8 +60,6 @@ visualize(cloud);
   std::cout << "x : " << human_pos[0] << std::endl;
   std::cout << "y : " << human_pos[1] << std::endl;
   std::cout << "z : " << human_pos[2] << std::endl;
-
-  visualize(cloud);
 
   return (0);
 }

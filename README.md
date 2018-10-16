@@ -1,7 +1,5 @@
 # HDM
 
-[![Build Status](https://travis-ci.com/mjerrar/HDM.svg?branch=master)](https://travis-ci.com/mjerrar/HDM)   [![Coverage Status](https://coveralls.io/repos/github/mjerrar/HDM/badge.svg?branch=master)](https://coveralls.io/github/mjerrar/HDM?branch=master)
-
 3D Lidar Human Detection Module
 
 ## Backlog
@@ -135,8 +133,20 @@ Voxel Filtered:
 Passthrough Filtered: 
 ![alt text](./result_images/passthrough_filtered.png)
 
-CLustered: 
+Clustered: 
 ![alt text](./result_images/clustered.png)
+
+###### Terminal Output
+```
+Loaded 
+50318
+1
+PointCloud representing the planar component: 3270 data points.
+Coordinates of Human are
+x : 0.0101565
+y : 2.86391
+z : -0.862732
+```
 
 ## License - GNU General Public License 3.0
 GNU LESSER GENERAL PUBLIC LICENSE
