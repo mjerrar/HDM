@@ -1,0 +1,14 @@
+cpplint ~/Documents/HDM/app/* ~/Documents/HDM/include/*
+Done processing /home/vendetta/Documents/HDM/app/cluster.cpp
+Ignoring /home/vendetta/Documents/HDM/app/CMakeLists.txt; not a valid file name (c, cc, h, hpp, c++, h++, cu, cpp, hxx, cxx, cuh)
+Done processing /home/vendetta/Documents/HDM/app/CMakeLists.txt
+Done processing /home/vendetta/Documents/HDM/app/main.cpp
+Done processing /home/vendetta/Documents/HDM/app/passthrough.cpp
+Done processing /home/vendetta/Documents/HDM/app/planeExtraction.cpp
+Done processing /home/vendetta/Documents/HDM/app/voxel.cpp
+Done processing /home/vendetta/Documents/HDM/include/cluster.h
+Done processing /home/vendetta/Documents/HDM/include/main.h
+Done processing /home/vendetta/Documents/HDM/include/passthrough.h
+Done processing /home/vendetta/Documents/HDM/include/planeExtraction.h
+Done processing /home/vendetta/Documents/HDM/include/voxel.h
+

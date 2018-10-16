@@ -1,13 +1,13 @@
 /**
-* @file planeExtraction.h
-* @author Jerrar Bukhari
-* @date 16 Oct 2018
-* @copyright 2018 Jerrar Bukhari
-* @brief <Header file for passthrough filter based on PCL>
-*/
+ * @file planeExtraction.h
+ * @author Jerrar Bukhari
+ * @date 15 Oct 2018
+ * @copyright 2018 Jerrar Bukhari
+ * @brief <Header file for passthrough filter based on PCL>
+ */
 
-#ifndef PLANEEXTRACTION_
-#define PLANEEXTRACTION_
+#ifndef INCLUDE_PLANEEXTRACTION_H_
+#define INCLUDE_PLANEEXTRACTION_H_
 
 #include <pcl/ModelCoefficients.h>
 #include <pcl/point_types.h>
@@ -18,14 +18,14 @@
 #include <pcl/segmentation/sac_segmentation.h>
 
 class PlaneExtraction {
-private:
+ private:
   pcl::SACSegmentation<pcl::PointXYZ> seg;
   pcl::ExtractIndices<pcl::PointXYZ> extract;
 
-public:
+ public:
   PlaneExtraction(int iter, float distThresh);
   void initSegmentator(int iter, float distThresh);
-  void extractGroundPlane (pcl::PointCloud<pcl::PointXYZ>::Ptr cloud);
+  void extractGroundPlane(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud);
 };
 
-#endif //PLANEEXTRACTION_
+#endif  // INCLUDE_PLANEEXTRACTION_H_

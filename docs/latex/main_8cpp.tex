@@ -1,0 +1,96 @@
+\hypertarget{main_8cpp}{}\section{app/main.cpp File Reference}
+\label{main_8cpp}\index{app/main.\+cpp@{app/main.\+cpp}}
+
+
+$<$3D L\+Idar Based Human Detection and localization module$>$  
+
+
+{\ttfamily \#include $<$main.\+h$>$}\\*
+{\ttfamily \#include $<$pcl/common/centroid.\+h$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+Include dependency graph for main.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries main} (int argc, char $\ast$$\ast$argv)\hypertarget{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{}\label{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}
+
+\item 
+void \hyperlink{main_8cpp_a131b249541ea239b1a6b1db058474a77}{visualize} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr cloud)
+\begin{DoxyCompactList}\small\item\em $<$visualize point=\char`\"{}\char`\"{} cloud=\char`\"{}\char`\"{} data$>$=\char`\"{}\char`\"{}$>$ \end{DoxyCompactList}\item 
+void \hyperlink{main_8cpp_ac7f6782c2397b0f552dee6028fb8397a}{visualize} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+ZI $>$\+::Ptr cloud)
+\begin{DoxyCompactList}\small\item\em $<$visualize point=\char`\"{}\char`\"{} cloud=\char`\"{}\char`\"{} data$>$=\char`\"{}\char`\"{}$>$ \end{DoxyCompactList}\item 
+int \hyperlink{main_8cpp_a716cf0cb759cdcee94bc8dbf7878bdfa}{load\+\_\+pcd} (std\+::string filename, pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr cloud)
+\begin{DoxyCompactList}\small\item\em $<$load point=\char`\"{}\char`\"{} cloud=\char`\"{}\char`\"{} data$>$=\char`\"{}\char`\"{}$>$ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+$<$3D L\+Idar Based Human Detection and localization module$>$ 
+
+\begin{DoxyAuthor}{Author}
+Jerrar Bukhari 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+15 Oct 2018 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\index{main.\+cpp@{main.\+cpp}!load\+\_\+pcd@{load\+\_\+pcd}}
+\index{load\+\_\+pcd@{load\+\_\+pcd}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{load\+\_\+pcd(std\+::string filename, pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z $>$\+::\+Ptr cloud)}{load_pcd(std::string filename, pcl::PointCloud< pcl::PointXYZ >::Ptr cloud)}}]{\setlength{\rightskip}{0pt plus 5cm}int load\+\_\+pcd (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{filename, }
+\item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr}]{cloud}
+\end{DoxyParamCaption}
+)}\hypertarget{main_8cpp_a716cf0cb759cdcee94bc8dbf7878bdfa}{}\label{main_8cpp_a716cf0cb759cdcee94bc8dbf7878bdfa}
+
+
+$<$load point=\char`\"{}\char`\"{} cloud=\char`\"{}\char`\"{} data$>$=\char`\"{}\char`\"{}$>$ 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em $<$cloud$>$} & $<$point cloud=\char`\"{}\char`\"{} data=\char`\"{}\char`\"{} holder$>$=\char`\"{}\char`\"{}$>$ \\
+\hline
+\mbox{\tt in}  & {\em $<$filename$>$} & $<$path to=\char`\"{}\char`\"{} cloud=\char`\"{}\char`\"{} data$>$=\char`\"{}\char`\"{}$>$ \\
+\hline
+\end{DoxyParams}
+\index{main.\+cpp@{main.\+cpp}!visualize@{visualize}}
+\index{visualize@{visualize}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{visualize(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z $>$\+::\+Ptr cloud)}{visualize(pcl::PointCloud< pcl::PointXYZ >::Ptr cloud)}}]{\setlength{\rightskip}{0pt plus 5cm}void visualize (
+\begin{DoxyParamCaption}
+\item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+YZ $>$\+::Ptr}]{cloud}
+\end{DoxyParamCaption}
+)}\hypertarget{main_8cpp_a131b249541ea239b1a6b1db058474a77}{}\label{main_8cpp_a131b249541ea239b1a6b1db058474a77}
+
+
+$<$visualize point=\char`\"{}\char`\"{} cloud=\char`\"{}\char`\"{} data$>$=\char`\"{}\char`\"{}$>$ 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em $<$cloud$>$} & $<$point cloud=\char`\"{}\char`\"{} data$>$=\char`\"{}\char`\"{}$>$ \\
+\hline
+\end{DoxyParams}
+\index{main.\+cpp@{main.\+cpp}!visualize@{visualize}}
+\index{visualize@{visualize}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{visualize(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+Z\+I $>$\+::\+Ptr cloud)}{visualize(pcl::PointCloud< pcl::PointXYZI >::Ptr cloud)}}]{\setlength{\rightskip}{0pt plus 5cm}void visualize (
+\begin{DoxyParamCaption}
+\item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+ZI $>$\+::Ptr}]{cloud}
+\end{DoxyParamCaption}
+)}\hypertarget{main_8cpp_ac7f6782c2397b0f552dee6028fb8397a}{}\label{main_8cpp_ac7f6782c2397b0f552dee6028fb8397a}
+
+
+$<$visualize point=\char`\"{}\char`\"{} cloud=\char`\"{}\char`\"{} data$>$=\char`\"{}\char`\"{}$>$ 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em $<$cloud$>$} & $<$point cloud=\char`\"{}\char`\"{} data$>$=\char`\"{}\char`\"{}$>$ \\
+\hline
+\end{DoxyParams}
