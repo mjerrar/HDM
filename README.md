@@ -106,8 +106,37 @@ Run program: ./app/shell-app
 ```
 
 ## Run the demo
-To run the demo simply make you that you have the testdata folder in your repo root folder
+To run the demo simply make you that you have the testdata folder in your repo root folder.
+The test data is named as 
+```
+vel_2m2r1545321.pcd
+```
+where:
+    vel=Velodyne HDL32, 
+    2m = 2 metres front distance,
+    2l/r = 2 metres left or right
+    12033465=ROS Time (can be ignored),
+    .pcd = point cloud data format
 
+The sotware is programed to look for the following PCD file
+```
+(repo_root)/testData/vel_3m970398000.pcd
+```
+you can change it accordingly.
+
+#### Following are visualizations of the intermediate processes
+
+Raw: 
+![alt text](./result_images/raw.png)
+
+Voxel Filtered: 
+![alt text](./result_images/voxel_filtered.png)
+
+Passthrough Filtered: 
+![alt text](./result_images/passthrough_filtered.png)
+
+CLustered: 
+![alt text](./result_images/clustered.png)
 
 ## License - GNU General Public License 3.0
 GNU LESSER GENERAL PUBLIC LICENSE
