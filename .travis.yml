@@ -24,6 +24,11 @@ before_install:
   - pip install --user cpp-coveralls
 install:
   - sudo apt-get install -y -qq lcov
+  - sudo apt-get install -y -qq lcov
+  - sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key 19274DEF
+  - sudo echo "deb http://ppa.launchpad.net/v-launchpad-jochen-sprickerhof-de/pcl/ubuntu maverick main" >> /etc/apt/sources.list
+  - sudo apt-get update
+  - sudo apt-get install libpcl-allsudo apt-get install g++ 
 script:
   - export CXX=$COMPILER;
   - mkdir build
