@@ -30,6 +30,12 @@ int main()
   PassThroughFilter passfilter(-5.0,5.0,-5.0,5.0,-2.0,1.0);
   passfilter.filter(cloud);
 
+  PlaneExtraction planeExtractor(100,0.02);
+  planeExtractor.extractGroundPlane(cloud);
+
+  ClusterExtractor clusteror(0.1,10,25000);
+  clusteror.extract(cloud);
+
   visualize(cloud);
 
   return(0);

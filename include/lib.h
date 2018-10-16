@@ -8,6 +8,8 @@
 #include <pcl/visualization/cloud_viewer.h>
 #include <voxel.h>
 #include <passthrough.h>
+#include <planeExtraction.h>
+#include <cluster.h>
 
 
 void visualize(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud)
