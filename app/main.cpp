@@ -29,7 +29,7 @@ int main(int argc, char** argv) {
   pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
 
   std::string filename =
-      "/home/vendetta/Documents/3dLidar_TestData/vel_3m970398000.pcd";
+      "./test_data/vel_3m970398000.pcd";
 
   load_pcd(filename, cloud);
 

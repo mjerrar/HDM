@@ -99,8 +99,9 @@ mkdir build
 cd build
 cmake ..
 make
-Run tests: ./test/cpp-test
-Run program: ./app/shell-app
+cd ..
+Run tests: ./build/test/cpp-test
+Run program: ./build/app/shell-app
 ```
 
 ## Run the demo
